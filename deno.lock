@@ -1,0 +1,57 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "npm:@sinclair/typebox@latest": "npm:@sinclair/typebox@0.32.27",
+      "npm:@typeschema/main@latest": "npm:@typeschema/main@0.13.9_@typeschema+typebox@0.13.4__@sinclair+typebox@0.32.27_@typeschema+zod@0.13.3__zod@3.23.6__zod-to-json-schema@3.23.0___zod@3.23.6_@sinclair+typebox@0.32.27_zod@3.23.6_zod-to-json-schema@3.23.0__zod@3.23.6",
+      "npm:@typeschema/typebox@latest": "npm:@typeschema/typebox@0.13.4_@sinclair+typebox@0.32.27",
+      "npm:@typeschema/zod@latest": "npm:@typeschema/zod@0.13.3_zod@3.23.6_zod-to-json-schema@3.23.0__zod@3.23.6",
+      "npm:zod-to-json-schema@latest": "npm:zod-to-json-schema@3.23.0_zod@3.23.6",
+      "npm:zod@latest": "npm:zod@3.23.6"
+    },
+    "npm": {
+      "@sinclair/typebox@0.32.27": {
+        "integrity": "sha512-JHRrubCKiXi6VKlbBTpTQnExkUFasPMIaXCJYJhqVBGLliQVt1yBZZgiZo3/uSmvAdXlIIdGoTAT6RB09L0QqA==",
+        "dependencies": {}
+      },
+      "@typeschema/core@0.13.2": {
+        "integrity": "sha512-pAt0MK249/9szYaoPuvzhSfOd3smrLhhwCCpUNB4onX32mRx5F3lzDIveIYGQkLYRq58xOX5sjoW+n72f/MLLw==",
+        "dependencies": {}
+      },
+      "@typeschema/main@0.13.9_@typeschema+typebox@0.13.4__@sinclair+typebox@0.32.27_@typeschema+zod@0.13.3__zod@3.23.6__zod-to-json-schema@3.23.0___zod@3.23.6_@sinclair+typebox@0.32.27_zod@3.23.6_zod-to-json-schema@3.23.0__zod@3.23.6": {
+        "integrity": "sha512-Z6yFaf2dLoqvuSNIeUelek9XI8T5Rog/NXHBMwV6KLhQCT0lQPBtmZSXAdW6EzFaqn1najhQEcirBqjWiFXiig==",
+        "dependencies": {
+          "@typeschema/core": "@typeschema/core@0.13.2",
+          "@typeschema/typebox": "@typeschema/typebox@0.13.4_@sinclair+typebox@0.32.27",
+          "@typeschema/zod": "@typeschema/zod@0.13.3_zod@3.23.6_zod-to-json-schema@3.23.0__zod@3.23.6"
+        }
+      },
+      "@typeschema/typebox@0.13.4_@sinclair+typebox@0.32.27": {
+        "integrity": "sha512-Rwcdn5CyxFWR003qSEtcJEHwPxa51iBublPYtomUL098i3K84z7YM+FKmFohLVawroGnAtxRw9yxfpulrP9ipw==",
+        "dependencies": {
+          "@sinclair/typebox": "@sinclair/typebox@0.32.27",
+          "@typeschema/core": "@typeschema/core@0.13.2"
+        }
+      },
+      "@typeschema/zod@0.13.3_zod@3.23.6_zod-to-json-schema@3.23.0__zod@3.23.6": {
+        "integrity": "sha512-p5Hs22WIKkM/vZTAvw5QOLSA0EJ6QBUsQMGUrXlYnTAE2LSR/F5MLsDUb18O6S5VxGjrzU7x3VIznD5qOafJRw==",
+        "dependencies": {
+          "@typeschema/core": "@typeschema/core@0.13.2",
+          "zod": "zod@3.23.6",
+          "zod-to-json-schema": "zod-to-json-schema@3.23.0_zod@3.23.6"
+        }
+      },
+      "zod-to-json-schema@3.23.0_zod@3.23.6": {
+        "integrity": "sha512-az0uJ243PxsRIa2x1WmNE/pnuA05gUq/JB8Lwe1EDCCL/Fz9MgjYQ0fPlyc2Tcv6aF2ZA7WM5TWaRZVEFaAIag==",
+        "dependencies": {
+          "zod": "zod@3.23.6"
+        }
+      },
+      "zod@3.23.6": {
+        "integrity": "sha512-RTHJlZhsRbuA8Hmp/iNL7jnfc4nZishjsanDAfEY1QpDQZCahUp3xDzl+zfweE9BklxMUcgBgS1b7Lvie/ZVwA==",
+        "dependencies": {}
+      }
+    }
+  },
+  "remote": {}
+}
