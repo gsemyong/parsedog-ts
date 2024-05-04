@@ -1,6 +1,6 @@
 {
   "name": "@parsedog/sdk",
   "description": "Parsedog SDK",
-  "version": "0.0.12",
+  "version": "0.1.0",
   "exports": "./src/index.ts"
 }
