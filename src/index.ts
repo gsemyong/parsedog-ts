@@ -13,21 +13,21 @@ declare const process: {
 
 /**
  * Extracts data from a document using provided schema.
- * @param schema - The schema used to extract data from the document.
- * @param document - The document from which to extract data. Can be URL or binary content of the file. Accepts PDF, PNG, JPEG, GIF and WEBP.
- * @returns A promise that resolves to the extracted data.
- * @throws If the extraction fails or the extracted data does not match the schema.
+ *
+ * The document can be url or binary content of a file.
+ * Supported file types are PDF, JPEG, PNG, GIF and WEBP.
  */
-export async function extractData<OutputSchema extends Schema>(
-  schema: OutputSchema,
-  document: string
-): Promise<Infer<OutputSchema>> {
-  const res = await fetch("http://api.parsedog.io/v0/extractData", {
+export async function extractData<OutputSchema extends Schema>(params: {
+  schema: OutputSchema;
+  document: string;
+}): Promise<Infer<OutputSchema>> {
+  const { schema, document } = params;
+  const res = await fetch("https://api.parsedog.io/extractData", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${
-        "Deno" in window
+        globalThis.Deno
           ? Deno.env.get("PARSEDOG_API_KEY")
           : process.env.PARSEDOG_API_KEY
       }`,

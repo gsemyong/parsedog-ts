@@ -38,13 +38,16 @@ PARSEDOG_API_KEY="Your API key here"
 // z is a zod instance
 import {z, extractData} from "@parsedog/sdk"
 
-// Document can be url PDF, PNG, JPEG, GIF or WEBP
-const data = await extractData(z.object({
-    products: z.array(z.object({
-        name: z.string(),
-        price: z.number(),
-    }))
-}), "https://example.com/receipt.pdf")
+// Document can be url of a PDF, PNG, JPEG, GIF or WEBP
+const data = await extractData({
+    schema: z.object({
+        products: z.array(z.object({
+            name: z.string(),
+            price: z.number(),
+        }))
+    }),
+    document: "https://example.com/receipt.pdf"
+})
 ```
 
 ### Extract data using TypeBox
@@ -52,12 +55,15 @@ const data = await extractData(z.object({
 ```typescript
 import {t, extractData} from "@parsedog/sdk"
 
-const data = await extractData(t.Object({
-    products: t.Array(t.Object({
-        name: t.String(),
-        price: t.Number(),
-    }))
-}), "https://example.com/receipt.pdf")
+const data = await extractData({
+    schema: t.Object({
+        products: t.Array(t.Object({
+            name: t.String(),
+            price: t.Number(),
+        }))
+    }),
+    document: "https://example.com/receipt.pdf"
+})
 ```
 
 ### Extract data from file using Bun
@@ -67,10 +73,13 @@ import {z, extractData} from "@parsedog/sdk"
 
 const document = Buffer.from(await Bun.file("receipt.pdf").arrayBuffer()).toString("binary")
 
-const data = await extractData(z.object({
-    products: z.array(z.object({
-        name: z.string(),
-        price: z.number(),
-    }))
-}), document)
+const data = await extractData({
+    schema: z.object({
+        products: z.array(z.object({
+            name: z.string(),
+            price: z.number(),
+        }))
+    }),
+    document
+})
 ```
