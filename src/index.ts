@@ -51,3 +51,39 @@ export async function extractData<OutputSchema extends Schema>(params: {
 
   return result.data;
 }
+
+/**
+ * Answers questions based on a document.
+ *
+ * The document can be url or binary content of a file.
+ * Supported file types are PDF, JPEG, PNG, GIF and WEBP.
+ */
+export async function answerQuestions(params: {
+  questions: string[];
+  document: string;
+}): Promise<string[]> {
+  const { questions, document } = params;
+  const res = await fetch("https://api.parsedog.io/answerQuestions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${
+        globalThis.Deno
+          ? Deno.env.get("PARSEDOG_API_KEY")
+          : process.env.PARSEDOG_API_KEY
+      }`,
+    },
+    body: JSON.stringify({
+      document,
+      questions,
+    }),
+  });
+
+  if (!res.ok) {
+    throw new Error(await res.text());
+  }
+
+  const data = (await res.json()) as string[];
+
+  return data;
+}
