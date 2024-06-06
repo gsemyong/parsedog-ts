@@ -30,7 +30,7 @@ Obtain your API key from the Parsedog dashboard and following to your `.env` fil
 PARSEDOG_API_KEY="Your API key here"
 ```
 
-## Usage
+## Extract data
 
 ### Extract data from document using URL
 
@@ -66,7 +66,7 @@ const data = await extractData({
 })
 ```
 
-### Extract data from file using Bun
+### Extract data from document using Bun
 
 ```typescript
 import {z, extractData} from "@parsedog/sdk"
@@ -80,6 +80,33 @@ const data = await extractData({
             price: z.number(),
         }))
     }),
+    document
+})
+```
+
+## Answer questions
+
+## Answer questions about document's content using URL
+```ts
+// z is a zod instance
+import {z, answerQuestions} from "@parsedog/sdk"
+
+// Document can be url of a PDF, PNG, JPEG, GIF or WEBP
+const data = await answerQuestions({
+    questions: ["What is the total amount?", "What is the total tax?"],
+    document: "https://example.com/receipt.pdf"
+})
+```
+
+### Answer questions about document content using Bun
+
+```typescript
+import {z, answerQuestions} from "@parsedog/sdk"
+
+const document = Buffer.from(await Bun.file("receipt.pdf").arrayBuffer()).toString("binary")
+
+const data = await answerQuestions({
+    questions: ["What is the total amount?", "What is the total tax?"],
     document
 })
 ```
