@@ -15,13 +15,13 @@ You can install the SDK using your favorite package manager:
 
 ```bash
 # bun
-bunx jsr add @parsedog/sdk@latest
+bunx jsr add @parsedog/sdk
 
 # pnpm
-pnpm dlx jsr add @parsedog/sdk@latest
+pnpm dlx jsr add @parsedog/sdk
 
 # deno
-deno add @parsedog/sdk@latest
+deno add @parsedog/sdk
 ```
 
 Obtain your API key from the Parsedog dashboard and following to your `.env` file:
